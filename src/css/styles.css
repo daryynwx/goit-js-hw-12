@@ -1,18 +1,216 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+
+.gallery {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  list-style: none;
+  padding: 0;
+  margin-left: 156px;
+  margin-right: 156px;
+}
+
+.gallery-item {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  padding: 8px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.loader {
+  margin: 20px auto;
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+
+.loader {
+  width: 10px;
+  height: 10px;
+  border: 5px solid #ccc;
+  border-top-color: #1d72b8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: block;
+  margin: 30px auto;
+}
+
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+
+.loader:before {
+  left: -1.5em;
+  animation-delay: 0.32s;
+}
+
+.loader:after {
+  left: 1.5em;
+}
+
+/*  
+@keyframes load1 {
+
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+} */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.search-form {
+  margin-top: 36px;
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: center
+}
+
+.input-form {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+
+}
+
+.input-form:hover {
+  border: 1px solid #000;
+}
+
+.input-form:focus {
+  border: 1px solid #4e75ff;
+}
+
+.button-form {
+  margin-left: 8px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  ;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.button-form:hover {
+  background: #6c8cff;
+}
+
+/* .load-more{
+display: flex;
+justify-content: center;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  ;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+} */
+
+.load-more {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 24px;
+  background-color: #4e75ff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.load-more:hover {
+  background-color: #6c8cff;
+  transform: scale(1.05);
+}
+
+.load-more:active {
+  transform: scale(0.98);
+}
+
+.load-more.hidden {
+  display: none;
+}
