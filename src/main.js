@@ -1,4 +1,3 @@
-// main.js
 import { getImagesByQuery } from './js/pixabay-api';
 import {
     createGallery,
@@ -11,7 +10,8 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const form = document.querySelector('.search-form');
+// Виправлений селектор на відповідний клас "form"
+const form = document.querySelector('.form');
 const loadMoreBtn = document.querySelector('.load-more');
 
 let currentPage = 1;
@@ -96,9 +96,10 @@ loadMoreBtn.addEventListener('click', async () => {
 });
 
 function smoothScroll() {
-    const { height: cardHeight } = document
-        .querySelector('.gallery-item')
-        .getBoundingClientRect();
+    const firstCard = document.querySelector('.gallery-item');
+    if (!firstCard) return;
+
+    const { height: cardHeight } = firstCard.getBoundingClientRect();
 
     window.scrollBy({
         top: cardHeight * 2,
